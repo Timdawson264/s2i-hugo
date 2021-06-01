@@ -21,4 +21,4 @@ if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
   shopt -u dotglob
 fi
 
-/bin/hugo -c /tmp -d /opt/app-root
+cd /tmp/src && /bin/hugo -d /opt/app-root

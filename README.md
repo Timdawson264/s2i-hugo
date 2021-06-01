@@ -1,5 +1,7 @@
+[![Docker Repository on Quay](https://quay.io/repository/tidawson/s2i-hugo/status "Docker Repository on Quay")](https://quay.io/repository/tidawson/s2i-hugo)
 
-# Creating a basic S2I builder image  
+##
+This S2i Image build HUGO wesites
 
 ## Getting started  
 
@@ -13,22 +15,6 @@
 | s2i/bin/save-artifacts | No        | Script for incremental builds that saves the built artifacts |
 | test/run               | No        | Test script for the builder image                            |
 | test/test-app          | Yes       | Test application source code                                 |
-
-#### Dockerfile
-Create a *Dockerfile* that installs all of the necessary tools and libraries that are needed to build and run our application.  This file will also handle copying the s2i scripts into the created image.
-
-#### S2I scripts
-
-##### assemble
-Create an *assemble* script that will build our application, e.g.:
-- build python modules
-- bundle install ruby gems
-- setup application specific configuration
-
-The script can also specify a way to restore any saved artifacts from the previous image.   
-
-##### run
-Create a *run* script that will start the application. 
 
 ##### save-artifacts (optional)
 Create a *save-artifacts* script which allows a new build to reuse content from a previous version of the application image.

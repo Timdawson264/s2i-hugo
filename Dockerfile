@@ -15,7 +15,7 @@ LABEL io.k8s.description="Platform for building Hugo static websites" \
 ENV hugo_version=0.83.1
 
 ADD https://github.com/gohugoio/hugo/releases/download/v${hugo_version}/hugo_${hugo_version}_Linux-64bit.tar.gz /
-RUN tar -x hugo -C /bin/ -f /hugo_${hugo_version}_Linux-64bit.tar.gz
+RUN tar -C /bin/ -x hugo -f /hugo_${hugo_version}_Linux-64bit.tar.gz
 
 # TODO (optional): Copy the builder files into /opt/app-root
 # COPY ./<builder_folder>/ /opt/app-root/

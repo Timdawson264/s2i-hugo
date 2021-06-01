@@ -12,7 +12,8 @@ LABEL io.k8s.description="Platform for building Hugo static websites" \
       io.openshift.expose-services="8080:http" \
       io.openshift.tags="builder,0.0.1,hugo"
 
-RUN yum -y install nginx && yum clean all
+RUN yum -y install nginx && yum clean all && rm /etc/nginx/nginx.conf
+COPY configs/nginx.conf /etc/nginx/nginx.conf 
 
 #Install HUGO
 ENV hugo_version=0.83.1
